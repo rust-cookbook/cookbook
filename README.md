@@ -16,3 +16,8 @@ A list of topics that are worth considering.  Some of these topics have been tak
     - Using lifetimes to control your borrows. [SO ref](http://stackoverflow.com/questions/32403837/mutable-borrow-seems-to-outlive-its-scope)
     - Good question, what's the morale of the story? [SO ref](http://stackoverflow.com/questions/30087338/why-does-unwrap-or-keep-borrow-in-scope)
     - When to clarify when you need `iter`, `into_iter`, or `iter_mut`? [SO ref](http://stackoverflow.com/questions/35298490/veciter-converts-to-borrow-of-option)
+    - Coerce multiple iterators, and iterator proxy.  Ie, why doesn't this work:
+      ```
+      for y in if reverse { (0..4).rev() } else { 0..4 } { ..
+      ```
+      <https://is.gd/ScNcpy> -steveklabnik
