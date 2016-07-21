@@ -10,6 +10,7 @@ A list of topics that are worth considering.  Some of these topics have been tak
   - Deduplicating items in an iterator.
   - Finding most requently occuring item in slice or general iterator.
   - Doing a "GroupBy" while iterating over product types.
+  - Expanding a list, ie: using `flat_map`, like `x.iter().flat_map(|&n| vec![n, n+1, n+2]).collect()`.
   - Find common **borrowck** issues! StackExchange?
     - Borrowed `self` in `if {} else {}` clasue [SO ref](http://stackoverflow.com/questions/30243606/if-let-borrow-conundrum)
     - Mutating `self` after borrowing `self`. [SO ref](http://stackoverflow.com/questions/27335252/cannot-borrow-self)
