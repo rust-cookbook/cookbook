@@ -10,3 +10,4 @@ A list of topics that are worth considering.  Some of these topics have been tak
   - Deduplicating items in an iterator.
   - Finding most requently occuring item in slice or general iterator.
   - Doing a "GroupBy" while iterating over product types.
+  - Find common **borrowck** issues! StackExchange?
