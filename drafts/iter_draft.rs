@@ -70,8 +70,28 @@ fn fourth() {
     println!("{:?}", v);
 }
 
+/// Dealing with iterators that don't have indicies.  Let's take a string for instance
+/// (even though you can save indicies using `char_indices()`).
+/// Here you can save the items you wish to push to the end
+
+fn fifth() {
+    let mut my_string = "Hello, String!".to_string();
+    let mut acc = String::new();
+    
+    for ch in my_string.chars() {
+        if ch == 'l' {
+            acc.push('!');
+        }
+    }
+    my_string = my_string + &acc;
+    println!("{}", my_string);
+
+}
+
+
 fn main() {
     // second();
     // third();
     fourth();
+    fifth();
 }
