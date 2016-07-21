@@ -2,8 +2,8 @@
 A collection of delicious recipes for the Rust programming language.  Bon Appétit.
 
 # Todo
-A list of topics that are worth considering.  Some of these topics have been taking from the Python 3 cookbook.
-  - Finding the Largest or Smallest N Items in an Slice, Iterator, or Range(?) object like a Set.
+A list of topics that are worth considering.  Some of these topics have been taken from the Python 3 Cookbook.
+  - Finding the largest or smallest N Items in an Slice, Iterator, or Range(?) object like a Set.
   - Implementing a Priority Queue (Constructing an iterator problem).
   - Implementing a mutable iterator.
   - Intersecting Hasmaps?  Union of Hashmaps?
