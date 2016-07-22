@@ -3,15 +3,16 @@ A collection of delicious recipes for the Rust programming language.  Bon Appét
 
 # Todo
 A list of topics that are worth considering.  Some of these topics have been taken from the Python 3 Cookbook.
-  - Finding the largest or smallest N Items in an Slice, Iterator, or Range(?) object like a Set.
-  - Implementing a Priority Queue (Constructing an iterator problem).
-  - Implementing a mutable iterator.
-  - Intersecting Hasmaps?  Union of Hashmaps?
-  - Deduplicating items in an iterator.
-  - Finding most requently occuring item in slice or general iterator.
-  - Doing a "GroupBy" while iterating over product types.
-  - Expanding a list, ie: using `flat_map`, like `x.iter().flat_map(|&n| vec![n, n+1, n+2]).collect()`.
-  - Find common **borrowck** issues! StackExchange?
+  - ** Iterators **
+    - Finding the largest or smallest N Items in an Slice, Iterator, or Range(?) object like a Set.
+    - Implementing a Priority Queue (Constructing an iterator problem).
+    - Implementing a mutable iterator.
+    - Intersecting Hasmaps?  Union of Hashmaps?
+    - Deduplicating items in an iterator.
+    - Finding most requently occuring item in slice or general iterator.
+    - Doing a "GroupBy" while iterating over product types.
+    - Expanding a list, ie: using `flat_map`, like `x.iter().flat_map(|&n| vec![n, n+1, n+2]).collect()`.
+  - **borrowck** issues! D:
     - Borrowed `self` in `if {} else {}` clasue [SO ref](http://stackoverflow.com/questions/30243606/if-let-borrow-conundrum)
     - Mutating `self` after borrowing `self`. [SO ref](http://stackoverflow.com/questions/27335252/cannot-borrow-self)
     - Using lifetimes to control your borrows. [SO ref](http://stackoverflow.com/questions/32403837/mutable-borrow-seems-to-outlive-its-scope)
@@ -25,4 +26,6 @@ A list of topics that are worth considering.  Some of these topics have been tak
   - **Closures Closures Closures!!**
     - Functions that return functions, see this [SO ref](http://stackoverflow.com/questions/27886474/recursive-function-type)
     - Get some good examples from this post [here](http://smallcultfollowing.com/babysteps/blog/2014/11/26/purging-proc/)
+  - ** Uncategorized **
+    - Caching function return values.  Hygiene?
     
