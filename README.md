@@ -22,3 +22,7 @@ A list of topics that are worth considering.  Some of these topics have been tak
       for y in if reverse { (0..4).rev() } else { 0..4 } { ..
       ```
       <https://is.gd/ScNcpy> -steveklabnik
+  - **Closures Closures Closures!!**
+    - Functions that return functions, see this [SO ref](http://stackoverflow.com/questions/27886474/recursive-function-type)
+    - Get some good examples from this post [here](http://smallcultfollowing.com/babysteps/blog/2014/11/26/purging-proc/)
+    
