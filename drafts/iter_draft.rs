@@ -85,9 +85,44 @@ fn remove_vowels() {
     println!("{}", res);
 }
 
+///
+/// Passing a reference
+///
+
+trait Ring {
+    fn is_prime(self) -> bool;
+}
+
+impl Ring for u8 {
+    fn is_prime(self) -> bool {
+        if self < 2 {
+            return false
+        }
+        
+        for n in 2..self {
+            if self % n == 0 {
+                return false
+            }
+        }
+        
+        true
+    }
+}
+
+fn remove_primes(v: &Vec<u8>) -> Vec<u8> {
+    v.iter().filter(|&u| !u.is_prime()).cloned().collect::<Vec<u8>>()
+}
+
+
+
 fn main() {
     iter_and_append();
     iter_and_append_f();
     remove_evens();
     remove_vowels();
+
+    let my_vec: Vec<u8> = vec![1,2,3,4,5,6,7,8,9,10,11,12];
+ 
+    println!("{:?}", my_vec);
+    println!("{:?}", remove_primes(&my_vec));
 }
