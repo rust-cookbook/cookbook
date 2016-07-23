@@ -124,5 +124,11 @@ fn main() {
     let my_vec: Vec<u8> = vec![1,2,3,4,5,6,7,8,9,10,11,12];
  
     println!("{:?}", my_vec);
+    // These next two lines are VERY important
+    // If you don't borrow the vec in both places, it will
+    // not pass borrowck
     println!("{:?}", remove_primes(&my_vec));
+    for &u in &my_vec {
+        println!("iterating over {:?}", u);
+    }
 }
