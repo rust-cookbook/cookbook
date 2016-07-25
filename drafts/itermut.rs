@@ -54,3 +54,9 @@ impl<'a> Iterator for DomMutIterator<'a> {
 
 fn main() { 
 }
+
+/// Note: Rust implementation of creating a mutable iterator uses a `Range` object which, keeps track of the size of the vector.
+/// this allows for unchecked boundes [see here](https://doc.rust-lang.org/src/collections/up/src/libcollections/btree/map.rs.html#920).
+/// we should leave this as an exercise to the reader and show them the source to reference. They use the `Range` object to call the
+/// recurse in the vector [see here](https://doc.rust-lang.org/src/collections/up/src/libcollections/btree/map.rs.html#920).  Perhaps
+/// this might be a good idea for us as well.
