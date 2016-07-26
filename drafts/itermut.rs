@@ -7,13 +7,13 @@
 // To start out our introduction to constructing mutable iterators, we will use
 // a simple data structure consisting nothing but a vector of integers.  But
 // these are our integers, so they are special, which is why we will now call
-// them out `SpecialIntegers` type.
+// them our `SpecialIntegers` type.
 
 struct SpecialIntegers(Vec<u32>);
 
 // To implement an iterator, we essentially need to tell Rust two things:
 //   a. What kind of elements will we be iterating over.  When iterating
-//      over our structure, we wil want our special integers (which are `u32`).
+//      over our structure, we will want our special integers (which are `u32`).
 //   b. What is the next element when we are iterating.
 //
 // We will therefore have the responsibility of keeping track of where we are at
@@ -23,7 +23,7 @@ struct SpecialIntegers(Vec<u32>);
 // we are.
 
 struct SpecialIntegersIterator<'a> {
-    data: &'a mut SpecialIntegers,
+    data: &'a mut Vec<u32>,
     cursor: usize,
 }
 
@@ -40,7 +40,13 @@ impl<'a> Iterator for SpecialIntegersIterator<'a> {
     // The type of object we will be iterating over
     type Item = &'a mut u32;
     fn next(&mut self) -> Option<&'a mut u32> {
-        unimplemented!();
+        if self.cursor < self.data.len() {
+            let c = self.cursor;
+            self.cursor += 1;
+            unimplemented!();  // TODO: Need to figure something out.
+        } else {
+            None
+        }
     }
 }
 
@@ -48,15 +54,19 @@ impl<'a> Iterator for SpecialIntegersIterator<'a> {
 // are planning on creating a brand new `SpecialIntegersIterator` structure
 // each you want to use an iterator, we need to tell Rust how to make this structure
 // for wehenever we need an iterator.  We do this by implementing the `IntoIterator`
-// trait.  Which, less, tells rust how to make an iterator interface by calling
-// `iter_mut`.
+// trait.  Which tells rust how to make an iterator interface by calling
+// `into_iter`.
 
 impl<'a> IntoIterator for &'a mut SpecialIntegers {
     type Item = &'a mut u32;
     type IntoIter = SpecialIntegersIterator<'a>;
     
     fn into_iter(self) -> SpecialIntegersIterator<'a> {
-        unimplemented!();
+        let &mut SpecialIntegers(ref mut v) = self;
+        SpecialIntegersIterator {
+            data: v,
+            cursor: 0,
+        }
     }
 }
 
