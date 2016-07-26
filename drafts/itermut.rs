@@ -36,7 +36,7 @@ struct SpecialIntegersIterator<'a> {
 // But before we do so, we should stop and think for a second: is what I am doing
 // actually safe?
 
-impl<'a> Iterator for &'a mut SpecialIntegersIterator<'a> {
+impl<'a> Iterator for SpecialIntegersIterator<'a> {
     // The type of object we will be iterating over
     type Item = &'a mut u32;
     fn next(&mut self) -> Option<&'a mut u32> {
@@ -52,10 +52,10 @@ impl<'a> Iterator for &'a mut SpecialIntegersIterator<'a> {
 // `iter_mut`.
 
 impl<'a> IntoIterator for &'a mut SpecialIntegers {
-    type Item =  &'a mut u32;
-    type IntoIter = SpecialIntegers;
+    type Item = &'a mut u32;
+    type IntoIter = SpecialIntegersIterator<'a>;
     
-    fn into_iter(&mut self) -> &'a mut SpecialIntegersIterator<'a> {
+    fn into_iter(self) -> SpecialIntegersIterator<'a> {
         unimplemented!();
     }
 }
